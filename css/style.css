@@ -1,0 +1,335 @@
+/* ===================== Fonts (local) ===================== */
+@font-face { font-family: 'Heebo'; font-weight: 400; font-display: block; src: url(../fonts/heebo-hebrew-400-normal.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+@font-face { font-family: 'Heebo'; font-weight: 400; font-display: block; src: url(../fonts/heebo-latin-400-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Heebo'; font-weight: 500; font-display: block; src: url(../fonts/heebo-hebrew-500-normal.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+@font-face { font-family: 'Heebo'; font-weight: 500; font-display: block; src: url(../fonts/heebo-latin-500-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Heebo'; font-weight: 700; font-display: block; src: url(../fonts/heebo-hebrew-700-normal.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+@font-face { font-family: 'Heebo'; font-weight: 700; font-display: block; src: url(../fonts/heebo-latin-700-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+@font-face { font-family: 'Heebo'; font-weight: 800; font-display: block; src: url(../fonts/heebo-hebrew-800-normal.woff2) format('woff2'); unicode-range: U+0307-0308, U+0590-05FF, U+200C-2010, U+20AA, U+25CC, U+FB1D-FB4F; }
+@font-face { font-family: 'Heebo'; font-weight: 800; font-display: block; src: url(../fonts/heebo-latin-800-normal.woff2) format('woff2'); unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD; }
+
+/* ===================== Tokens ===================== */
+:root {
+  --blue-1: #1E3A8A;
+  --blue-2: #2563EB;
+  --gold: #C9A227;
+  --gold-soft: #E3C35A;
+  --navy-1: #14254F;
+  --navy-2: #0E1A3A;
+  --radius: 22px;
+  --gap: 20px;
+
+  --bg: #EEF2F8;
+  --bg-glow-1: rgba(37, 99, 235, 0.10);
+  --bg-glow-2: rgba(37, 99, 235, 0.07);
+  --card: #FFFFFF;
+  --text: #0F1E46;
+  --text-2: #334155;
+  --muted: #64748B;
+  --line: #CBD5E1;
+  --tile: #EAF1FC;
+  --hl: #E0EAFF;
+  --hl-text: #1E3A8A;
+  --shadow: 0 10px 30px rgba(15, 30, 70, 0.07), 0 2px 6px rgba(15, 30, 70, 0.04);
+  --pill: linear-gradient(270deg, var(--blue-1), var(--blue-2));
+  --pill-shadow: 0 4px 14px rgba(30, 58, 138, 0.22);
+  --cloud: #0F1E46;
+  --photo-filter: none;
+  --notice-bg: var(--card);
+  --ticker-bg: var(--card);
+  --logo-border: #D5DCE8;
+  --logo-text: #475569;
+}
+
+body.mode-night {
+  --bg: #0B1226;
+  --bg-glow-1: rgba(37, 99, 235, 0.16);
+  --bg-glow-2: rgba(37, 99, 235, 0.10);
+  --card: #131C36;
+  --text: #E6ECFA;
+  --text-2: #C3CDE4;
+  --muted: #8E9BBB;
+  --line: rgba(230, 236, 250, 0.22);
+  --tile: #1A2546;
+  --hl: rgba(59, 130, 246, 0.24);
+  --hl-text: #E6ECFA;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.35);
+  --pill: linear-gradient(270deg, #1E40AF, #3B82F6);
+  --pill-shadow: 0 0 22px rgba(59, 130, 246, 0.55), 0 0 4px rgba(59, 130, 246, 0.6);
+  --cloud: #E6ECFA;
+  --photo-filter: brightness(0.7);
+  --notice-bg: linear-gradient(160deg, #16295E, #0F1E4A);
+  --ticker-bg: linear-gradient(90deg, #12245A, #16295E);
+  --logo-border: rgba(230, 236, 250, 0.28);
+  --logo-text: #AEB9D3;
+}
+
+/* ===================== Base / canvas ===================== */
+* { box-sizing: border-box; }
+html, body {
+  margin: 0; height: 100%; overflow: hidden;
+  background: #04070F; cursor: none;
+}
+* { cursor: none !important; }
+body { font-family: 'Heebo', sans-serif; color: var(--text); -webkit-font-smoothing: antialiased; }
+
+#stage {
+  position: absolute; top: 50%; left: 50%;
+  width: 1920px; height: 1080px; overflow: hidden;
+  transform: translate(-50%, -50%);
+  transform-origin: center center;
+  background:
+    radial-gradient(1100px 700px at 85% 10%, var(--bg-glow-1), transparent 70%),
+    radial-gradient(900px 700px at 5% 95%, var(--bg-glow-2), transparent 70%),
+    var(--bg);
+}
+
+.icon { width: 1em; height: 1em; display: block; flex: none; }
+[data-icon] { display: inline-flex; }
+.i-sun { color: var(--gold); }
+.i-drop { color: #3B82F6; }
+
+/* ===================== Header ===================== */
+.top { position: absolute; inset: 0 0 auto 0; height: 200px; }
+
+.welcome {
+  position: absolute; top: 0; right: 0;
+  width: 650px; height: 200px;
+  padding: 30px 48px 0 40px;
+  background: var(--pill);
+  border-bottom-left-radius: 110px;
+  color: #fff;
+  box-shadow: 0 12px 34px rgba(37, 99, 235, 0.28);
+  display: flex; flex-direction: column; align-items: flex-start; justify-content: center; gap: 6px;
+  padding-top: 0;
+}
+.welcome-title { font-size: 74px; font-weight: 800; line-height: 1.05; letter-spacing: -0.5px; white-space: nowrap; }
+.welcome-addr { display: flex; align-items: center; gap: 10px; font-size: 30px; font-weight: 500; color: rgba(255, 255, 255, 0.88); white-space: nowrap; }
+.welcome-addr .icon { font-size: 30px; }
+
+.datetime {
+  position: absolute; top: 22px; right: 694px; height: 170px;
+  display: flex; align-items: center; gap: 36px;
+}
+.dates { display: flex; flex-direction: column; align-items: flex-start; gap: 4px; }
+.gdate { display: flex; align-items: center; gap: 14px; font-size: 42px; font-weight: 700; color: var(--text); letter-spacing: 0.5px; }
+.gdate .icon { color: var(--gold); font-size: 36px; }
+.hdate { font-size: 32px; font-weight: 500; color: var(--gold); padding-right: 50px; white-space: nowrap; }
+.vsep { width: 2px; height: 96px; background: var(--line); border-radius: 2px; }
+.clock { font-size: 92px; font-weight: 800; color: var(--text); letter-spacing: -1px; line-height: 1; font-variant-numeric: tabular-nums; direction: ltr; }
+body.mode-day .clock, body.mode-shabbat .clock { color: #0F1E46; }
+
+.logo {
+  position: absolute; top: 46px; left: 24px;
+  width: 320px; height: 124px;
+  border: 2px solid var(--logo-border); border-radius: 18px;
+  background: rgba(255, 255, 255, 0.45);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 44px; font-weight: 500; color: var(--logo-text);
+  overflow: hidden;
+}
+body.mode-night .logo { background: rgba(255, 255, 255, 0.03); }
+.logo.has-img { padding: 12px; }
+.logo img { max-width: 100%; max-height: 100%; object-fit: contain; }
+
+/* ===================== Grid ===================== */
+.grid {
+  position: absolute; top: 224px; right: 24px; left: 24px; bottom: 24px;
+  display: grid; gap: var(--gap);
+  grid-template-columns: 562px 723px 1fr;
+  grid-template-rows: 446px 274px 1fr;
+  grid-template-areas:
+    "notices building weather"
+    "beach   shabbat  weather"
+    "ticker  ticker   weather";
+}
+.notices { grid-area: notices; }
+.building { grid-area: building; }
+.weather { grid-area: weather; }
+.beach { grid-area: beach; }
+.shabbat-card { grid-area: shabbat; }
+.ticker { grid-area: ticker; }
+.banner { grid-area: banner; display: none; }
+
+.card {
+  position: relative; overflow: hidden;
+  background: var(--card); border-radius: var(--radius); box-shadow: var(--shadow);
+}
+
+.pill {
+  position: absolute; top: 0; right: 0; z-index: 3;
+  height: 64px; padding: 0 30px 0 36px;
+  display: inline-flex; align-items: center; gap: 14px;
+  background: var(--pill); color: #fff;
+  border-radius: 999px;
+  font-size: 30px; font-weight: 700; white-space: nowrap;
+  box-shadow: var(--pill-shadow);
+}
+.pill .icon { font-size: 32px; }
+
+/* photos */
+.photo {
+  position: relative; overflow: hidden; border-radius: var(--radius); box-shadow: var(--shadow);
+  background: linear-gradient(135deg, var(--blue-1), var(--blue-2));
+}
+.photo img {
+  position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover;
+  filter: var(--photo-filter);
+}
+img.broken { visibility: hidden !important; }
+.building .bimg { opacity: 0; transition: opacity 1.6s ease-in-out; transform-origin: 50% 50%; will-change: opacity, transform; }
+.building .bimg.active { opacity: 1; }
+.building .bimg.kb { animation: kenburns 20s linear forwards; }
+@keyframes kenburns { from { transform: scale(1); } to { transform: scale(1.05); } }
+
+/* ===================== Notices ===================== */
+.notices { background: var(--notice-bg); }
+.notices .slides { position: absolute; top: 88px; right: 36px; left: 36px; bottom: 76px; }
+.nslide {
+  position: absolute; inset: 0; overflow: hidden;
+  display: flex; flex-direction: column; align-items: flex-start; gap: 12px;
+  opacity: 0; transition: opacity 1.2s ease-in-out;
+}
+.nslide.active { opacity: 1; }
+.ntag {
+  display: inline-block; padding: 3px 18px 4px; border-radius: 10px;
+  background: linear-gradient(270deg, #B8901A, #D4AF37); color: #fff;
+  font-size: 24px; font-weight: 700; line-height: 1.35;
+}
+.ntitle { margin: 2px 0 0; font-size: 35px; font-weight: 800; line-height: 1.22; color: var(--text); }
+.nbody { margin: 0; font-size: 30px; font-weight: 500; line-height: 1.45; color: var(--text-2); white-space: pre-line; }
+.nfoot {
+  position: absolute; right: 36px; left: 36px; bottom: 24px; height: 36px;
+  display: flex; align-items: center; gap: 44px;
+}
+.nfoot[hidden] { display: none; }
+.ncount { font-size: 26px; font-weight: 700; color: var(--text); direction: ltr; }
+.dots { display: flex; gap: 12px; }
+.dots i { width: 14px; height: 14px; border-radius: 50%; background: var(--line); transition: background 0.6s; }
+.dots i.on { background: var(--blue-1); }
+body.mode-night .dots i.on { background: #60A5FA; }
+
+/* ===================== Shabbat card ===================== */
+.shabbat-card { background: linear-gradient(160deg, var(--navy-1), var(--navy-2)); color: #fff; }
+.candles {
+  position: absolute; top: 6px; bottom: 0; left: 3%; width: 40%;
+  -webkit-mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
+  mask-image: radial-gradient(closest-side, #000 72%, transparent 100%);
+}
+.candles img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; object-position: 50% 100%; }
+.shtext {
+  position: absolute; top: 88px; right: 40px; left: 46%;
+  display: flex; flex-direction: column; align-items: flex-start;
+}
+.shtitle { font-size: 44px; font-weight: 700; line-height: 1.15; color: #fff; white-space: nowrap; }
+.shline { width: 100%; max-width: 330px; height: 2px; margin: 14px 0 12px; background: linear-gradient(270deg, var(--gold), rgba(201, 162, 39, 0.15)); }
+.shtime { font-size: 32px; font-weight: 500; line-height: 1.45; color: var(--gold-soft); white-space: nowrap; }
+.shtime b { font-weight: 700; }
+.shabbat-card .pill .icon { font-size: 30px; }
+
+/* ===================== Ticker ===================== */
+.ticker {
+  position: relative; overflow: hidden;
+  background: var(--ticker-bg); border-radius: 999px; box-shadow: var(--shadow);
+  display: flex; align-items: center;
+}
+.ticker .pill { position: relative; height: 56px; margin-right: 8px; padding: 0 26px 0 30px; font-size: 28px; }
+.ticker .pill .icon { font-size: 30px; }
+.ticker-view {
+  position: relative; flex: 1; height: 100%; overflow: hidden; margin-left: 10px;
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 30px), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 60px, #000 calc(100% - 30px), transparent 100%);
+}
+.ticker-track {
+  position: absolute; top: 0; bottom: 0; right: 0;
+  display: flex; flex-direction: row; align-items: center;
+  width: max-content; will-change: transform;
+}
+.tgroup { display: flex; align-items: center; flex: none; white-space: nowrap; }
+.titem { font-size: 29px; font-weight: 500; color: var(--text); padding: 0 6px; }
+.tdot { width: 12px; height: 12px; border-radius: 50%; background: var(--blue-2); margin: 0 26px; flex: none; }
+body.mode-night .tdot { background: #60A5FA; box-shadow: 0 0 8px rgba(96, 165, 250, 0.8); }
+
+/* ===================== Weather card ===================== */
+.weather { display: flex; flex-direction: column; align-items: center; padding: 80px 30px 22px; }
+.wnow { display: flex; align-items: center; justify-content: center; gap: 26px; margin-top: 4px; }
+.wicon { font-size: 112px; color: var(--cloud); display: flex; }
+.wicon .icon { stroke-width: 1.6; }
+.wtemp { font-size: 118px; font-weight: 800; line-height: 0.95; letter-spacing: -2px; color: var(--text); }
+.wdesc { font-size: 36px; font-weight: 700; color: var(--text); margin-top: 4px; line-height: 1.2; }
+.wloc { font-size: 26px; font-weight: 500; color: var(--muted); line-height: 1.3; }
+.wdays { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; width: 100%; margin-top: 18px; }
+.wday {
+  background: var(--tile); border-radius: 18px; padding: 10px 6px 12px;
+  display: flex; flex-direction: column; align-items: center; gap: 4px;
+}
+.wdn { font-size: 28px; font-weight: 700; color: var(--text); line-height: 1.1; }
+.wday .icon { font-size: 44px; color: var(--cloud); }
+.wdt { font-size: 26px; font-weight: 700; color: var(--text); line-height: 1.1; }
+.weather .pill-inline { position: relative; align-self: flex-start; margin-top: 18px; height: 54px; font-size: 28px; padding: 0 26px 0 30px; }
+.weather .pill-inline .icon { font-size: 30px; }
+.zlist { list-style: none; margin: 8px 0 0; padding: 0; width: 100%; }
+.zlist li {
+  display: flex; justify-content: space-between; align-items: center;
+  height: 46px; padding: 0 22px; border-radius: 12px;
+  font-size: 28px; font-weight: 500; color: var(--text); white-space: nowrap;
+}
+.zlist .zt { font-weight: 700; font-variant-numeric: tabular-nums; }
+.zlist li.next { background: var(--hl); color: var(--hl-text); font-weight: 700; }
+body.mode-day .zlist li.next .zt, body.mode-shabbat .zlist li.next .zt { color: var(--blue-1); }
+
+/* ===================== Shabbat mode ===================== */
+body.mode-shabbat .grid {
+  grid-template-rows: 422px 260px 1fr;
+  grid-template-areas:
+    "notices building weather"
+    "beach   shabbat  weather"
+    "banner  banner   banner";
+}
+body.mode-shabbat .ticker { display: none; }
+body.mode-shabbat .banner {
+  display: flex; align-items: center; justify-content: center;
+  background: #fff; border-radius: 999px; box-shadow: var(--shadow);
+  font-size: 66px; font-weight: 800; color: var(--blue-1);
+}
+body.mode-shabbat .welcome {
+  background: linear-gradient(270deg, #C9D8F3, #DCE6F7);
+  color: var(--blue-1);
+  box-shadow: 0 10px 30px rgba(30, 58, 138, 0.10);
+}
+body.mode-shabbat .welcome-addr { color: #334155; }
+body.mode-shabbat .wdays { display: none; }
+body.mode-shabbat .wnow { margin-top: 14px; }
+body.mode-shabbat .weather .pill-inline { margin-top: 30px; }
+body.mode-shabbat .zlist { margin-top: 12px; }
+body.mode-shabbat .zlist li { height: 49px; }
+body.mode-shabbat .shabbat-card {
+  border: 3px solid var(--gold);
+  box-shadow: 0 0 0 1px rgba(201, 162, 39, 0.35), 0 0 34px rgba(201, 162, 39, 0.38), var(--shadow);
+}
+body.mode-shabbat .shabbat-card .pill { display: none; }
+body.mode-shabbat .shtext { top: 0; bottom: 0; justify-content: center; }
+body.mode-shabbat .shtitle { font-size: 48px; }
+body.mode-shabbat .shtime { font-size: 34px; }
+/* completely static: no motion at all */
+body.mode-shabbat *, body.mode-shabbat *::before, body.mode-shabbat *::after {
+  animation: none !important; transition: none !important;
+}
+
+/* ===================== Preview buttons (?preview=1) ===================== */
+#preview {
+  position: fixed; top: 8px; left: 8px; z-index: 100;
+  display: flex; gap: 6px; direction: rtl;
+}
+#preview[hidden] { display: none; }
+#preview button {
+  font: 700 16px 'Heebo', sans-serif; padding: 6px 14px; border-radius: 8px;
+  border: 1px solid #94A3B8; background: rgba(255, 255, 255, 0.9); color: #0F1E46;
+}
+#preview button.on { background: #2563EB; color: #fff; border-color: #2563EB; }
+/* Shabbat: "זמני היום" as a soft full-width bar, as in the approved design */
+body.mode-shabbat .weather .pill-inline {
+  align-self: stretch; justify-content: center; border-radius: 16px;
+  background: var(--tile); color: var(--text); box-shadow: none;
+}
+body.mode-shabbat .weather .pill-inline .icon { color: var(--text); }

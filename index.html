@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>מסך לובי</title>
+  <link rel="preload" href="fonts/heebo-hebrew-800-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/heebo-hebrew-700-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="css/style.css">
+  <script type="module" src="js/main.js"></script>
+</head>
+<body class="mode-day">
+  <div id="stage">
+    <header class="top">
+      <div class="welcome">
+        <div class="welcome-title" id="welcome">ברוכים הבאים</div>
+        <div class="welcome-addr"><span data-icon="mapPin"></span><span id="address"></span></div>
+      </div>
+      <div class="datetime">
+        <div class="dates">
+          <div class="gdate"><span data-icon="calendar"></span><span id="gdate">—</span></div>
+          <div class="hdate" id="hdate">—</div>
+        </div>
+        <div class="vsep"></div>
+        <div class="clock" id="clock">—</div>
+      </div>
+      <div class="logo" id="logo"></div>
+    </header>
+
+    <main class="grid">
+      <section class="card notices" id="notices">
+        <div class="pill"><span data-icon="megaphone"></span><span>הודעות לדיירים</span></div>
+        <div class="slides" id="noticeSlides"></div>
+        <div class="nfoot" id="nfoot" hidden><span class="ncount" id="ncount"></span><span class="dots" id="ndots"></span></div>
+      </section>
+
+      <section class="photo building" id="building"></section>
+
+      <section class="card weather">
+        <div class="pill"><span data-icon="thermometer"></span><span>מזג אוויר</span></div>
+        <div class="wnow">
+          <div class="wicon" id="wIcon"></div>
+          <div class="wtemp" id="wTemp" dir="ltr">—</div>
+        </div>
+        <div class="wdesc" id="wDesc">—</div>
+        <div class="wloc" id="wLoc"></div>
+        <div class="wdays" id="wDays"></div>
+        <div class="pill pill-inline"><span data-icon="sunrise"></span><span>זמני היום</span></div>
+        <ul class="zlist" id="zList"></ul>
+      </section>
+
+      <section class="photo beach" id="beach"></section>
+
+      <section class="card shabbat-card" id="shabbatCard">
+        <div class="candles" id="candles"></div>
+        <div class="pill"><span data-icon="candles"></span><span id="shPill">שבת שלום</span></div>
+        <div class="shtext">
+          <div class="shtitle" id="shTitle">—</div>
+          <div class="shline"></div>
+          <div class="shtime" id="shIn">—</div>
+          <div class="shtime" id="shOut">—</div>
+        </div>
+      </section>
+
+      <section class="ticker" id="ticker">
+        <div class="pill"><span data-icon="newspaper"></span><span>מבזקים</span></div>
+        <div class="ticker-view" id="tickerView"><div class="ticker-track" id="tickerTrack"></div></div>
+      </section>
+
+      <section class="banner" id="banner"><span id="bannerText">שבת שלום ומבורך</span></section>
+    </main>
+  </div>
+  <div id="preview" hidden></div>
+</body>
+</html>
